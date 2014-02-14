@@ -75,7 +75,7 @@
 -(void) getJobs
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://127.0.0.1:3000/jobs/ruby" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:@"http://192.168.1.110:3000/jobs/ruby" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         for (int i = 0; i < [responseObject count]; i++) {
             Job *vacancy = [[Job alloc] init];
             vacancy.title = [responseObject[i] valueForKey:@"title"];

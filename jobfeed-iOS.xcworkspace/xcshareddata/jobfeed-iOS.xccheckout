@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>56A75C22-E347-4AA5-97EE-B42122BA6809</string>
+	<key>IDESourceControlProjectName</key>
+	<string>jobfeed-iOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8E0AB806-D13E-4A08-9D00-F30370CB97EC</key>
+		<string>ssh://github.com/IvanShamatov/jobfeed-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>jobfeed-iOS.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8E0AB806-D13E-4A08-9D00-F30370CB97EC</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/IvanShamatov/jobfeed-iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8E0AB806-D13E-4A08-9D00-F30370CB97EC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8E0AB806-D13E-4A08-9D00-F30370CB97EC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>jobfeed-iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
