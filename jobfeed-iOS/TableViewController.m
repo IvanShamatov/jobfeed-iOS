@@ -9,6 +9,7 @@
 #import "TableViewController.h"
 #import "WebViewController.h"
 #import "Job.h"
+#import "JobCell.h"
 #import <AFNetworking/AFNetworking.h>
 
 
@@ -56,10 +57,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"JobCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    JobCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    if (!cell) {
+        cell = [[JobCell alloc] initWithStyle:UITableViewCellStyleDefault
+                              reuseIdentifier:CellIdentifier];
+    }
     Job *vacancy = self.jobs[indexPath.row];
-    
     cell.textLabel.text = vacancy.title;
+    cell.authorLabel.text = vacancy.source;
     return cell;
 }
 
@@ -75,6 +80,8 @@
             Job *vacancy = [[Job alloc] init];
             vacancy.title = [responseObject[i] valueForKey:@"title"];
             vacancy.link = [responseObject[i] valueForKey:@"url"];
+            vacancy.source = [responseObject[i] valueForKey:@"author"];
+            
             [self.jobs addObject:vacancy];
             vacancy = nil;
         }
