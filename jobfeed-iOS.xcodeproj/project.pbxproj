@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		79B7A1D94C2D419EA0F67DFB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B9F5DE676E4D83BBD30F13 /* libPods.a */; };
 		F9021E3718ADF53500023406 /* JobCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9021E3618ADF53500023406 /* JobCell.m */; };
+		F927193A18B132EA0079A7FA /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F927193918B132EA0079A7FA /* SettingsViewController.m */; };
 		F9627C8A18A213B600C6FB4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9627C8918A213B600C6FB4B /* Foundation.framework */; };
 		F9627C8C18A213B600C6FB4B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9627C8B18A213B600C6FB4B /* CoreGraphics.framework */; };
 		F9627C8E18A213B600C6FB4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9627C8D18A213B600C6FB4B /* UIKit.framework */; };
@@ -44,6 +45,8 @@
 		826010086C5B42C3B8B6E38D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		F9021E3518ADF53500023406 /* JobCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobCell.h; sourceTree = "<group>"; };
 		F9021E3618ADF53500023406 /* JobCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobCell.m; sourceTree = "<group>"; };
+		F927193818B132EA0079A7FA /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		F927193918B132EA0079A7FA /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		F9627C8618A213B600C6FB4B /* jobfeed-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "jobfeed-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9627C8918A213B600C6FB4B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F9627C8B18A213B600C6FB4B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -136,6 +139,8 @@
 				F9627C9818A213B600C6FB4B /* AppDelegate.h */,
 				F9627C9918A213B600C6FB4B /* AppDelegate.m */,
 				F9627C9B18A213B600C6FB4B /* Main_iPhone.storyboard */,
+				F927193818B132EA0079A7FA /* SettingsViewController.h */,
+				F927193918B132EA0079A7FA /* SettingsViewController.m */,
 				F9021E3518ADF53500023406 /* JobCell.h */,
 				F9021E3618ADF53500023406 /* JobCell.m */,
 				F97D8B2418ACE627006110C5 /* TableViewController.h */,
@@ -322,6 +327,7 @@
 				F97D8B2618ACE627006110C5 /* TableViewController.m in Sources */,
 				F9627C9618A213B600C6FB4B /* main.m in Sources */,
 				F9EF7E8C18ACF3FC005036A9 /* WebViewController.m in Sources */,
+				F927193A18B132EA0079A7FA /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
