@@ -23,7 +23,6 @@
 }
 
 - (IBAction)saveSettings:(UIStoryboardSegue *)segue {
-    NSLog(@"Saving settings");
   //RELOAD TABLE HERE, SEND NEW SOURCES, GET NEW JOBS
 }
 

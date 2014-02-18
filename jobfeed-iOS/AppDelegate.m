@@ -16,6 +16,23 @@
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    if (![settings objectForKey:@"firstLaunch"]) {
+        [settings setObject:@"NO" forKey:@"firstLaunch"];
+        
+        NSArray *keywords = @[@"ruby", @"redis", @"mongo"];
+        NSDictionary *sources = @{@"Хантим": @"OFF",
+                                  @"HeadHunter": @"ON",
+                                  @"ITmozg": @"OFF",
+                                  @"Mail.ru": @"ON",
+                                  @"Яндекс работа": @"OFF",
+                                  @"Careers Stackoverflow": @"OFF",
+                                  @"We Work Remotely": @"OFF"};
+        [settings setObject:keywords forKey:@"keywords"];
+        [settings setObject:sources forKey:@"sources"];
+        [settings synchronize];
+    }
     return YES;
 }
 							

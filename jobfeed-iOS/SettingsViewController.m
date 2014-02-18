@@ -9,10 +9,10 @@
 #import "SettingsViewController.h"
 
 @interface SettingsViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
-@property (strong, nonatomic) NSMutableArray *sources;
+@property (strong, nonatomic) NSMutableDictionary *sources;
 @property (strong, nonatomic) NSMutableArray *keywords;
 @property (strong, nonatomic) NSUserDefaults *settings;
-@property (strong, nonatomic) NSMutableArray *settingsSources;
+@property (strong, nonatomic) NSArray *sourcesForTable;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
@@ -28,17 +28,9 @@
 {
     [super viewDidLoad];
     self.settings = [NSUserDefaults standardUserDefaults];
-    self.sources = [NSMutableArray arrayWithObjects:@"Хантим",
-                     @"HeadHunter",
-                     @"ITmozg",
-                     @"Mail.ru",
-                     @"Яндекс работа",
-                     @"Careers Stackoverflow",
-                     @"We Work Remotely", nil];
-    self.keywords = [NSMutableArray arrayWithObjects:@"ruby",
-                     @"python",
-                     @"mongo", nil];
-                    //[self settingsKeywords];
+    self.keywords = [[self.settings objectForKey:KEYWORDS_KEY] mutableCopy];
+    self.sources = [[self.settings objectForKey:SOURCES_KEY] mutableCopy];
+    self.sourcesForTable = [self.sources allKeys];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,7 +53,7 @@
     if (section == KEYWORDS_SECTION) {
         return self.keywords.count;
     } else if (section == SOURCES_SECTION) {
-        return self.sources.count;
+        return self.sourcesForTable.count;
     }
     return 0;
 }
@@ -86,10 +78,12 @@
     } else if (indexPath.section == SOURCES_SECTION) {
         static NSString *CellIdentifier = @"Sources";
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        NSString *label = self.sources[indexPath.row];
+        NSString *label = self.sourcesForTable[indexPath.row];
         cell.textLabel.text = label;
-        if ([self.settingsSources containsObject:label]) {
+        if ([[self.sources objectForKey:label] isEqualToString:@"ON"]) {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryNone;
         }
     }
     return cell;
@@ -104,45 +98,14 @@
     if (indexPath.section == SOURCES_SECTION) {
         if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
             cell.accessoryType = UITableViewCellAccessoryNone;
-            [self saveSources:cell.textLabel.text withValue:NO];
+            [self.sources setValue:@"OFF" forKey:cell.textLabel.text];
         }else {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
-            [self saveSources:cell.textLabel.text withValue:YES];
+            [self.sources setValue:@"ON" forKey:cell.textLabel.text];
         }
     }
 }
 
-
-# pragma mark - Custom methods
-
-- (NSUserDefaults *) settings {
-    return [NSUserDefaults standardUserDefaults];
-}
-
-- (NSMutableArray *) settingsSources {
-    if (!_settingsSources) {
-        _settingsSources = [[NSMutableArray alloc] init];
-        [_settingsSources addObjectsFromArray:[self.settings objectForKey:@"sources"]];
-    }
-    return _settingsSources;
-}
-
-- (NSArray *) settingsKeywords {
-    return [[self settings] arrayForKey:KEYWORDS_KEY];
-}
-
-
-
-- (void) saveSources: (NSString *)key withValue:(BOOL) value
-{
-    if (value) {
-        [self.settingsSources addObject:key];
-    } else {
-        [self.settingsSources removeObject:key];
-    }
-    [self.settings setObject:self.settingsSources forKey:@"sources"];
-    [self.settings synchronize];
-}
 
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -178,9 +141,13 @@
 #define SAVING_SETTINGS_SEGUE @"SavingSettings"
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:SAVING_SETTINGS_SEGUE]) {
-        // SAVE SETTINGS
-    }
+//    if ([segue.identifier isEqualToString:SAVING_SETTINGS_SEGUE]) {
+    [self.settings setObject:[self.keywords copy] forKey:KEYWORDS_KEY];
+    [self.settings setObject:[self.sources copy] forKey:SOURCES_KEY];
+    [self.settings synchronize];
+    NSLog(@"%@", [self.settings objectForKey:KEYWORDS_KEY]);
+    NSLog(@"%@", [self.settings objectForKey:SOURCES_KEY]);
+//    }
 }
 
 
