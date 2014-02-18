@@ -6,18 +6,18 @@
 //  Copyright (c) 2014 Ivan Shamatov. All rights reserved.
 //
 
-#import "TableViewController.h"
+#import "JobsTableViewController.h"
 #import "WebViewController.h"
 #import "Job.h"
 #import "JobCell.h"
 #import <AFNetworking/AFNetworking.h>
 #import "SettingsViewController.h"
 
-@interface TableViewController ()
+@interface JobsTableViewController ()
 @property (nonatomic, strong) NSMutableArray *jobs;
 @end
 
-@implementation TableViewController
+@implementation JobsTableViewController
 - (IBAction)refreshTable:(id)sender {
     [self getJobs];
 }

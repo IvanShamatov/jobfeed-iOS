@@ -23,7 +23,7 @@
 		F9627CB118A213B600C6FB4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9627C8D18A213B600C6FB4B /* UIKit.framework */; };
 		F9627CB918A213B600C6FB4B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9627CB718A213B600C6FB4B /* InfoPlist.strings */; };
 		F9627CBB18A213B600C6FB4B /* jobfeed_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9627CBA18A213B600C6FB4B /* jobfeed_iOSTests.m */; };
-		F97D8B2618ACE627006110C5 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97D8B2518ACE627006110C5 /* TableViewController.m */; };
+		F97D8B2618ACE627006110C5 /* JobsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97D8B2518ACE627006110C5 /* JobsTableViewController.m */; };
 		F97D8B2818ACE690006110C5 /* settings-32.png in Resources */ = {isa = PBXBuildFile; fileRef = F97D8B2718ACE690006110C5 /* settings-32.png */; };
 		F97D8B2A18ACE69F006110C5 /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = F97D8B2918ACE69F006110C5 /* settings-25.png */; };
 		F9EF7E8C18ACF3FC005036A9 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EF7E8B18ACF3FC005036A9 /* WebViewController.m */; };
@@ -64,8 +64,8 @@
 		F9627CB618A213B600C6FB4B /* jobfeed-iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "jobfeed-iOSTests-Info.plist"; sourceTree = "<group>"; };
 		F9627CB818A213B600C6FB4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F9627CBA18A213B600C6FB4B /* jobfeed_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jobfeed_iOSTests.m; sourceTree = "<group>"; };
-		F97D8B2418ACE627006110C5 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		F97D8B2518ACE627006110C5 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		F97D8B2418ACE627006110C5 /* JobsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsTableViewController.h; sourceTree = "<group>"; };
+		F97D8B2518ACE627006110C5 /* JobsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsTableViewController.m; sourceTree = "<group>"; };
 		F97D8B2718ACE690006110C5 /* settings-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-32.png"; sourceTree = "<group>"; };
 		F97D8B2918ACE69F006110C5 /* settings-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-25.png"; sourceTree = "<group>"; };
 		F9EF7E8A18ACF3FC005036A9 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -143,8 +143,8 @@
 				F927193918B132EA0079A7FA /* SettingsViewController.m */,
 				F9021E3518ADF53500023406 /* JobCell.h */,
 				F9021E3618ADF53500023406 /* JobCell.m */,
-				F97D8B2418ACE627006110C5 /* TableViewController.h */,
-				F97D8B2518ACE627006110C5 /* TableViewController.m */,
+				F97D8B2418ACE627006110C5 /* JobsTableViewController.h */,
+				F97D8B2518ACE627006110C5 /* JobsTableViewController.m */,
 				F9EF7E8D18ACF532005036A9 /* Job.h */,
 				F9EF7E8E18ACF532005036A9 /* Job.m */,
 				F9627CA718A213B600C6FB4B /* Images.xcassets */,
@@ -324,7 +324,7 @@
 				F9EF7E8F18ACF532005036A9 /* Job.m in Sources */,
 				F9021E3718ADF53500023406 /* JobCell.m in Sources */,
 				F9627C9A18A213B600C6FB4B /* AppDelegate.m in Sources */,
-				F97D8B2618ACE627006110C5 /* TableViewController.m in Sources */,
+				F97D8B2618ACE627006110C5 /* JobsTableViewController.m in Sources */,
 				F9627C9618A213B600C6FB4B /* main.m in Sources */,
 				F9EF7E8C18ACF3FC005036A9 /* WebViewController.m in Sources */,
 				F927193A18B132EA0079A7FA /* SettingsViewController.m in Sources */,
