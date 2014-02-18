@@ -8,11 +8,12 @@
 
 #import "SettingsViewController.h"
 
-@interface SettingsViewController ()
-@property (strong, nonatomic) NSArray *sources;
-@property (strong, nonatomic) NSArray *keywords;
+@interface SettingsViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@property (strong, nonatomic) NSMutableArray *sources;
+@property (strong, nonatomic) NSMutableArray *keywords;
 @property (strong, nonatomic) NSUserDefaults *settings;
 @property (strong, nonatomic) NSMutableArray *settingsSources;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation SettingsViewController
@@ -27,14 +28,17 @@
 {
     [super viewDidLoad];
     self.settings = [NSUserDefaults standardUserDefaults];
-    self.sources = @[@"Хантим",
+    self.sources = [NSMutableArray arrayWithObjects:@"Хантим",
                      @"HeadHunter",
                      @"ITmozg",
                      @"Mail.ru",
                      @"Яндекс работа",
                      @"Careers Stackoverflow",
-                     @"We Work Remotely"];
-    self.keywords = [self settingsKeywords];
+                     @"We Work Remotely", nil];
+    self.keywords = [NSMutableArray arrayWithObjects:@"ruby",
+                     @"python",
+                     @"mongo", nil];
+                    //[self settingsKeywords];
 }
 
 - (void)didReceiveMemoryWarning
@@ -141,40 +145,44 @@
 }
 
 
-/*
-// Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    if (indexPath.section == KEYWORDS_SECTION) {
+        return YES;
+    }
+    return NO;
 }
-*/
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        [self.keywords removeObject:cell.textLabel.text];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
-*/
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+    NSString *new_keyword = searchBar.text;
+    searchBar.text = @"";
+    [self.keywords addObject:new_keyword];
+    [self.tableView reloadData];
+}
 
 
-/*
 #pragma mark - Navigation
 
-// In a story board-based application, you will often want to do a little preparation before navigation
+#define SAVING_SETTINGS_SEGUE @"SavingSettings"
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:SAVING_SETTINGS_SEGUE]) {
+        // SAVE SETTINGS
+    }
 }
 
- */
+
 
 @end

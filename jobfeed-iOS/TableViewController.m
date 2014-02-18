@@ -11,7 +11,7 @@
 #import "Job.h"
 #import "JobCell.h"
 #import <AFNetworking/AFNetworking.h>
-
+#import "SettingsViewController.h"
 
 @interface TableViewController ()
 @property (nonatomic, strong) NSMutableArray *jobs;
@@ -20,6 +20,11 @@
 @implementation TableViewController
 - (IBAction)refreshTable:(id)sender {
     [self getJobs];
+}
+
+- (IBAction)saveSettings:(UIStoryboardSegue *)segue {
+    NSLog(@"Saving settings");
+  //RELOAD TABLE HERE, SEND NEW SOURCES, GET NEW JOBS
 }
 
 
