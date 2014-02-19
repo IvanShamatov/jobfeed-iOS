@@ -1,5 +1,5 @@
 //
-//  TableViewController.h
+//  JobsTableViewController.h
 //  jobfeed-iOS
 //
 //  Created by Шаматов Иван on 13.02.14.

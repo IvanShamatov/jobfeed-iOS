@@ -18,10 +18,10 @@
 
 @implementation SettingsViewController
 
-#define KEYWORDS_SECTION 0
-#define SOURCES_SECTION 1
-#define KEYWORDS_KEY @"keywords"
-#define SOURCES_KEY @"sources"
+static int const KEYWORDS_SECTION = 0;
+static int const SOURCES_SECTION = 1;
+static NSString * const KEYWORDS_KEY = @"keywords";
+static NSString * const SOURCES_KEY = @"sources";
 
 
 - (void)viewDidLoad
@@ -138,16 +138,11 @@
 
 #pragma mark - Navigation
 
-#define SAVING_SETTINGS_SEGUE @"SavingSettings"
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-//    if ([segue.identifier isEqualToString:SAVING_SETTINGS_SEGUE]) {
     [self.settings setObject:[self.keywords copy] forKey:KEYWORDS_KEY];
     [self.settings setObject:[self.sources copy] forKey:SOURCES_KEY];
     [self.settings synchronize];
-    NSLog(@"%@", [self.settings objectForKey:KEYWORDS_KEY]);
-    NSLog(@"%@", [self.settings objectForKey:SOURCES_KEY]);
-//    }
 }
 
 

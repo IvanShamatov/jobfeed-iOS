@@ -1,5 +1,5 @@
 //
-//  TableViewController.m
+//  JobsTableViewController.m
 //  jobfeed-iOS
 //
 //  Created by Шаматов Иван on 13.02.14.
@@ -20,10 +20,12 @@
 @implementation JobsTableViewController
 - (IBAction)refreshTable:(id)sender {
     [self getJobs];
+    [self.refreshControl endRefreshing];
 }
 
 - (IBAction)saveSettings:(UIStoryboardSegue *)segue {
   //RELOAD TABLE HERE, SEND NEW SOURCES, GET NEW JOBS
+    //get jobs for keywords, 
 }
 
 
@@ -76,10 +78,14 @@
     [self.tableView reloadData];
 }
 
+-(void) refreshTable {
+    
+}
+
 -(void) getJobs
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://192.168.1.110:3000/jobs/ruby" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:@"http://127.0.0.1:3000/jobs/ruby" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         for (int i = 0; i < [responseObject count]; i++) {
             Job *vacancy = [[Job alloc] init];
             vacancy.title = [responseObject[i] valueForKey:@"title"];
