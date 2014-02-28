@@ -15,9 +15,13 @@
 
 @interface JobsTableViewController ()
 @property (nonatomic, strong) NSMutableArray *jobs;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @end
 
 @implementation JobsTableViewController
+
+
+
 - (IBAction)refreshTable:(id)sender {
     [self getJobs];
     [self.refreshControl endRefreshing];
@@ -27,6 +31,21 @@
   //RELOAD TABLE HERE, SEND NEW SOURCES, GET NEW JOBS
     //get jobs for keywords, 
 }
+
+- (IBAction)segmentChoosed:(id)sender{
+    NSInteger seg = _segmentedControl.selectedSegmentIndex;
+    switch (seg) {
+        case 0:
+            NSLog(@"New choosed");
+            break;
+        case 1:
+            NSLog(@"Favorites");
+            break;
+    }
+}
+
+
+
 
 
 -(NSMutableArray *)jobs {
@@ -70,16 +89,11 @@
     }
     Job *vacancy = self.jobs[indexPath.row];
     cell.textLabel.text = vacancy.title;
-    cell.authorLabel.text = vacancy.source;
     return cell;
 }
 
 -(void) updateTable {
     [self.tableView reloadData];
-}
-
--(void) refreshTable {
-    
 }
 
 -(void) getJobs
@@ -90,7 +104,6 @@
             Job *vacancy = [[Job alloc] init];
             vacancy.title = [responseObject[i] valueForKey:@"title"];
             vacancy.link = [responseObject[i] valueForKey:@"url"];
-            vacancy.source = [responseObject[i] valueForKey:@"author"];
             
             [self.jobs addObject:vacancy];
             vacancy = nil;
@@ -113,7 +126,5 @@
         dest.job = vacancy;
     }
 }
-
-
 
 @end

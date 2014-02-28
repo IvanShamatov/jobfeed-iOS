@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Company" representedClassName="Company" syncable="YES">
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="jobs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Job" inverseName="company" inverseEntity="Job" syncable="YES"/>
+    </entity>
+    <entity name="Job" representedClassName="Job" syncable="YES">
+        <attribute name="external_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="published" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="jobs" inverseEntity="Company" syncable="YES"/>
+        <relationship name="keywords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Keyword" inverseName="jobs" inverseEntity="Keyword" syncable="YES"/>
+    </entity>
+    <entity name="Keyword" representedClassName="Keyword" syncable="YES">
+        <attribute name="word" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="jobs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Job" inverseName="keywords" inverseEntity="Job" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Job" positionX="-434" positionY="153" width="128" height="163"/>
+        <element name="Keyword" positionX="-153" positionY="444" width="128" height="73"/>
+        <element name="Company" positionX="-153" positionY="105" width="128" height="88"/>
+    </elements>
+</model>

@@ -26,8 +26,11 @@
 		F97D8B2618ACE627006110C5 /* JobsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97D8B2518ACE627006110C5 /* JobsTableViewController.m */; };
 		F97D8B2818ACE690006110C5 /* settings-32.png in Resources */ = {isa = PBXBuildFile; fileRef = F97D8B2718ACE690006110C5 /* settings-32.png */; };
 		F97D8B2A18ACE69F006110C5 /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = F97D8B2918ACE69F006110C5 /* settings-25.png */; };
+		F9E1DCA918C0CF4600ED87F5 /* Jobsfeed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9E1DCA718C0CF4600ED87F5 /* Jobsfeed.xcdatamodeld */; };
+		F9E1DCB518C0D34900ED87F5 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E1DCB418C0D34900ED87F5 /* Company.m */; };
+		F9E1DCB818C0D34A00ED87F5 /* Job.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E1DCB718C0D34A00ED87F5 /* Job.m */; };
+		F9E1DCBB18C0D34A00ED87F5 /* Keyword.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E1DCBA18C0D34A00ED87F5 /* Keyword.m */; };
 		F9EF7E8C18ACF3FC005036A9 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EF7E8B18ACF3FC005036A9 /* WebViewController.m */; };
-		F9EF7E8F18ACF532005036A9 /* Job.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EF7E8E18ACF532005036A9 /* Job.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,10 +71,15 @@
 		F97D8B2518ACE627006110C5 /* JobsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsTableViewController.m; sourceTree = "<group>"; };
 		F97D8B2718ACE690006110C5 /* settings-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-32.png"; sourceTree = "<group>"; };
 		F97D8B2918ACE69F006110C5 /* settings-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-25.png"; sourceTree = "<group>"; };
+		F9E1DCA818C0CF4600ED87F5 /* Jobsfeed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Jobsfeed.xcdatamodel; sourceTree = "<group>"; };
+		F9E1DCB318C0D34900ED87F5 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
+		F9E1DCB418C0D34900ED87F5 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
+		F9E1DCB618C0D34A00ED87F5 /* Job.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Job.h; sourceTree = "<group>"; };
+		F9E1DCB718C0D34A00ED87F5 /* Job.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Job.m; sourceTree = "<group>"; };
+		F9E1DCB918C0D34A00ED87F5 /* Keyword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keyword.h; sourceTree = "<group>"; };
+		F9E1DCBA18C0D34A00ED87F5 /* Keyword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Keyword.m; sourceTree = "<group>"; };
 		F9EF7E8A18ACF3FC005036A9 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		F9EF7E8B18ACF3FC005036A9 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		F9EF7E8D18ACF532005036A9 /* Job.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Job.h; sourceTree = "<group>"; };
-		F9EF7E8E18ACF532005036A9 /* Job.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Job.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,19 +142,11 @@
 		F9627C8F18A213B600C6FB4B /* jobfeed-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F9EF7E8A18ACF3FC005036A9 /* WebViewController.h */,
-				F9EF7E8B18ACF3FC005036A9 /* WebViewController.m */,
-				F9627C9818A213B600C6FB4B /* AppDelegate.h */,
+				F9E1DCBD18C0D39E00ED87F5 /* controllers */,
+				F9E1DCBC18C0D38F00ED87F5 /* models */,
 				F9627C9918A213B600C6FB4B /* AppDelegate.m */,
 				F9627C9B18A213B600C6FB4B /* Main_iPhone.storyboard */,
-				F927193818B132EA0079A7FA /* SettingsViewController.h */,
-				F927193918B132EA0079A7FA /* SettingsViewController.m */,
-				F9021E3518ADF53500023406 /* JobCell.h */,
-				F9021E3618ADF53500023406 /* JobCell.m */,
-				F97D8B2418ACE627006110C5 /* JobsTableViewController.h */,
-				F97D8B2518ACE627006110C5 /* JobsTableViewController.m */,
-				F9EF7E8D18ACF532005036A9 /* Job.h */,
-				F9EF7E8E18ACF532005036A9 /* Job.m */,
+				F9E1DCBE18C0D3C200ED87F5 /* views */,
 				F9627CA718A213B600C6FB4B /* Images.xcassets */,
 				F9627C9018A213B600C6FB4B /* Supporting Files */,
 			);
@@ -156,6 +156,7 @@
 		F9627C9018A213B600C6FB4B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F9627C9818A213B600C6FB4B /* AppDelegate.h */,
 				F97D8B2918ACE69F006110C5 /* settings-25.png */,
 				F97D8B2718ACE690006110C5 /* settings-32.png */,
 				F9627C9118A213B600C6FB4B /* jobfeed-iOS-Info.plist */,
@@ -182,6 +183,42 @@
 				F9627CB718A213B600C6FB4B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9E1DCBC18C0D38F00ED87F5 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				F9E1DCA718C0CF4600ED87F5 /* Jobsfeed.xcdatamodeld */,
+				F9E1DCB918C0D34A00ED87F5 /* Keyword.h */,
+				F9E1DCBA18C0D34A00ED87F5 /* Keyword.m */,
+				F9E1DCB618C0D34A00ED87F5 /* Job.h */,
+				F9E1DCB718C0D34A00ED87F5 /* Job.m */,
+				F9E1DCB318C0D34900ED87F5 /* Company.h */,
+				F9E1DCB418C0D34900ED87F5 /* Company.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		F9E1DCBD18C0D39E00ED87F5 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F9EF7E8A18ACF3FC005036A9 /* WebViewController.h */,
+				F9EF7E8B18ACF3FC005036A9 /* WebViewController.m */,
+				F927193818B132EA0079A7FA /* SettingsViewController.h */,
+				F927193918B132EA0079A7FA /* SettingsViewController.m */,
+				F97D8B2418ACE627006110C5 /* JobsTableViewController.h */,
+				F97D8B2518ACE627006110C5 /* JobsTableViewController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		F9E1DCBE18C0D3C200ED87F5 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				F9021E3518ADF53500023406 /* JobCell.h */,
+				F9021E3618ADF53500023406 /* JobCell.m */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,13 +358,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9EF7E8F18ACF532005036A9 /* Job.m in Sources */,
 				F9021E3718ADF53500023406 /* JobCell.m in Sources */,
+				F9E1DCB518C0D34900ED87F5 /* Company.m in Sources */,
 				F9627C9A18A213B600C6FB4B /* AppDelegate.m in Sources */,
 				F97D8B2618ACE627006110C5 /* JobsTableViewController.m in Sources */,
 				F9627C9618A213B600C6FB4B /* main.m in Sources */,
+				F9E1DCB818C0D34A00ED87F5 /* Job.m in Sources */,
 				F9EF7E8C18ACF3FC005036A9 /* WebViewController.m in Sources */,
+				F9E1DCBB18C0D34A00ED87F5 /* Keyword.m in Sources */,
 				F927193A18B132EA0079A7FA /* SettingsViewController.m in Sources */,
+				F9E1DCA918C0CF4600ED87F5 /* Jobsfeed.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +598,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F9E1DCA718C0CF4600ED87F5 /* Jobsfeed.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F9E1DCA818C0CF4600ED87F5 /* Jobsfeed.xcdatamodel */,
+			);
+			currentVersion = F9E1DCA818C0CF4600ED87F5 /* Jobsfeed.xcdatamodel */;
+			path = Jobsfeed.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F9627C7E18A213B600C6FB4B /* Project object */;
 }
